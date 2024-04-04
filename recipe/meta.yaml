@@ -1,5 +1,5 @@
 {% set name = "launchdarkly-eventsource" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/launchdarkly_eventsource-{{ version }}.tar.gz
-  sha256: 211791f1267f9b7b0a62a0bb5fc9c5ed1fb4a834440f16be551968dbe772557a
+  sha256: 8cb3301ec0daeb5e17eaa37b3b65f6660fab851b317e69271185ef2fb42c2fde
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - urllib3 >=1.22.0,<3
+    - urllib3 >=1.26.0,<3
 
 test:
   imports:
