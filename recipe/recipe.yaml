@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: launchdarkly-eventsource
+  version: "1.7.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/launchdarkly_eventsource-${{ version }}.tar.gz
+  sha256: 948096eaeed911eaf86d0c6a68e2d68dd4c44bdc5c709c8614ba8465b0a1eb02
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - urllib3 >=1.26.0,<3
+
+tests:
+  - python:
+      imports:
+        - ld_eventsource
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+
+about:
+  summary: LaunchDarkly SSE Client
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://docs.launchdarkly.com/sdk/server-side/python
+  repository: https://github.com/launchdarkly/python-eventsource
+
+extra:
+  recipe-maintainers:
+    - xhochy
