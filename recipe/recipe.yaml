@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: launchdarkly-eventsource
-  version: "1.7.0"
+  version: "1.7.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/launchdarkly_eventsource-${{ version }}.tar.gz
-  sha256: 948096eaeed911eaf86d0c6a68e2d68dd4c44bdc5c709c8614ba8465b0a1eb02
+  sha256: 8575c8d4186d439bb8f918dd13e1cc41a86d462820193d65b382e4f94cda40ff
 
 build:
   number: 0
